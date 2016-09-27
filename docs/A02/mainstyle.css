@@ -1,0 +1,91 @@
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+header{
+	padding: 1em;
+	clear: left;
+	background-image: url("media/bg_header.jpg");
+	height: 100px;
+}
+footer {
+    padding: 1em;
+    background-color: grey;
+    clear: left;
+    text-align: center;
+}
+nav {
+	padding: 0em;
+	background-color: blue;
+	clear: left;
+	text-align: left;
+}
+#main_navi{
+	background-color : red;
+	width: 70%;
+	float: left;
+}
+#user_navi{
+	background-color : orange;
+	float: right;
+	width: 30%;
+}
+nav ul {
+	padding: 0;
+	margin: 0;
+	
+}
+nav ul li {
+	float: left;
+	position: relative;
+    list-style-type: none;
+    padding-left: 10px;
+	padding-right: 10px;
+}
+			
+nav ul a {
+    text-decoration: none;
+}
+
+aside {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+			
+aside ul a {
+    text-decoration: none;
+}
+#active{
+	font-weight: bold;
+}
+
+article {
+    margin-left: 150px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+	height: 100%;
+	min-height: 500px;
+}
+
+#bestsellerTable{
+	border-collapse: collapse;
+    width: 70%;
+	float: middle;
+}
+
+#bestsellerTable td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+
+
