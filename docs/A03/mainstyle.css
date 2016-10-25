@@ -1,0 +1,154 @@
+/* Wrapper der die Width auf  */
+div.container {
+    width: 900px;
+    border: 1px solid gray;
+    margin: 0 auto;
+}
+
+
+header{
+
+	clear: left;
+	background-image: url("media/bg_header.jpg");
+	height: 120px;
+}
+
+
+
+
+/* Top Navi */
+nav {
+	padding: 0em;
+	clear: left;
+}
+#main_navi{
+	background-color : #75B4D5;
+	width: 60%;
+	float: left;
+}
+#warenkorb{
+	background-color : #294F7C;
+	float: right;
+	width: 20%;
+}
+#user_navi{
+	background-color : #74BBDB;
+	float: left;
+	width: 20%;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	
+}
+nav ul li {
+	float: left;
+	position: relative;
+    list-style-type: none;
+    padding-left: 10px;
+	padding-right: 10px;
+}
+			
+nav ul {
+    text-decoration: none;
+}
+
+nav ul .active {
+    font-weight: bold;
+}
+
+
+/* Aside Navigation*/
+aside {
+    float: left;
+    width: 20%; 
+    height: 484px;
+    margin: 0;
+    padding: 1em;
+    padding-top: 2em;
+    background-color: #598FDF;
+}
+
+#search{
+    background-color : #74BBDB;
+    width = 100%;
+}
+#asideNav{
+    margin-top: 50px;
+    background-color : #0173C7;
+    width: 100%;
+}
+#asideNav ul{
+    list-style-type: none;
+}
+#asideNav a{
+    
+}
+
+/* Article */
+article {
+    margin-left: 150px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+	height: 100%;
+	min-height: 500px;
+}
+article h1{
+    text-align: center;
+}
+.ArticleText{
+    overflow: auto;
+    float: left;
+    max-width: 65%;
+    max-height: 390px;
+    
+}
+.ArticleImage{
+    float: right;
+    width : 200px;
+    height : 200px;
+}
+.ArticleVersions{
+    float:right;
+    margin-top: 50px;
+    width: 30%;
+    text-align: center; 
+}
+.ArticleBuy{
+    float:right;
+    margin-top: 50px;
+    width: 30%;
+    text-align: center; 
+}
+
+
+/* Footer */ 
+footer {
+    
+    background-color: #2897A0;
+    clear: left;
+    height: 30px;
+    
+}
+div #Impressum{
+    height: 30px;
+   float: left; 
+   width: 70%;
+}
+div #Language{
+    height: 30px;
+    float:right;
+    width: 30%;
+    text-align: right;
+}
+.LanguageIcon{
+    width: 25px;
+    height: 25px;
+    margin: 2px 5px 5px 15px;
+   
+    
+}
+
+
