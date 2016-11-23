@@ -1,6 +1,6 @@
 <?php
 class Product {
-	private $id, $game_id, $name, $description, $console, $category, $price, $releaseDate;
+	private $id, $consoleId, $game_id, $name, $description, $console, $category, $price, $releaseDate;
 	
 	
 	public function getId() {
@@ -8,6 +8,9 @@ class Product {
 	}
 	public function getGameId(){
 		return $this->game_id;
+	}
+		public function getConsoleId(){
+		return $this->consoleId;
 	}
 	
 	public function getName() {
@@ -40,6 +43,7 @@ static public function getProducts($filter = '0', $groupBy = 'game.id') {
 	
 	$sqlStatement = "SELECT 
 			product.id as id,
+			product.console_id as consoleId,
 			game.name AS name,
 			game.description AS description,
 			console.name AS console,
@@ -75,6 +79,8 @@ static public function getProductById($id) {
 		$id = (int) $id; // NEEDS to get Safe => Injection
 		$res = DB::doQuery("SELECT 
 			product.id as id,
+			product.console_id AS consoleId,
+			product.game_id AS game_id,
 			game.name AS name,
 			game.description AS description,
 			console.name AS console,
@@ -107,9 +113,35 @@ static public function getGameList(){
 	while ($game = $res->fetch_object(get_class()))
 	$games[] = $game;
 	return $games;
-
-	
 }
+// Get all GameVersions of one product
+static public function getGameVersions($game_id) {
+	$games = array();
+	
+		$id = (int) $game_id; // NEEDS to get Safe => Injection
+		$res = DB::doQuery("SELECT 
+			product.id as id,
+			product.console_id AS consoleId,
+			game.name AS name,
+			game.description AS description,
+			console.name AS console,
+			category.name AS category,
+			price AS price 
+			
+		FROM product 
+
+		LEFT JOIN game ON game.id = product.game_id 
+		LEFT JOIN console ON console.id = product.console_id
+		LEFT JOIN category ON category.id = game.category
+		WHERE product.game_id = $id" 
+		);
+		if (!$res) return null;
+	while ($game = $res->fetch_object(get_class()))
+	$games[] = $game;
+	return $games;
+}
+
+
 
 //Add a New Game
 static public function addNewGame($game_name, $game_description, $game_category, $game_manufacturer, $game_releaseDate){
@@ -129,7 +161,7 @@ static public function addNewProduct($game_id, $product_console, $product_price,
 		NULL, '$game_id', '$product_console', '$product_price', 0, '$product_edition');"		 
 		);	
 	return $res;
-	}
+}
 	
 	
 
@@ -138,6 +170,7 @@ static public function getAllProducts() {
 	
 	$sqlStatement = "SELECT 
 			product.id as id,
+			product.console_id AS consoleId,
 			game.name AS name,
 			game.description AS description,
 			console.name AS console,

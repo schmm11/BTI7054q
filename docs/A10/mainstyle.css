@@ -36,6 +36,7 @@ nav {
 	float: left;
 	height: 25px;
 }
+
 #warenkorb{
 	background-color : #757575;
 	float: right;
@@ -92,7 +93,6 @@ nav ul li {
 aside {
     float: left;
     width: 20%; 
- 
     margin: 0;
     padding: 1em;
     padding-top: 2em;
@@ -103,14 +103,11 @@ aside {
 }
 
 aside ul li{
+	font-size: 26px;
 	color: WHITE; 
 	margin-bottom : 15px;	
 }
 
-aside a{
-	font-size: 25px;
-	
-}
 aside a:link {
     text-decoration: none;
 }
@@ -119,13 +116,14 @@ aside a:visited {
     text-decoration: none;
 }
 
-aside a:hover {
+aside  a:hover {
     text-decoration: underline;
 }
-aside a:active {
+aside  a:active {
     text-decoration: underline;
 	font-weight: bold;
 }
+
 
 
 
@@ -187,8 +185,28 @@ article a{
     float:right;
     margin-top: 50px;
     width: 30%;
+	min-width: 70px;
     text-align: center; 
 }
+.VersionImage{
+	width : 25px;
+	height: 25px;
+	padding-left: 15px;
+	filter: grayscale(100%);
+}
+.VersionImage{
+	width : 25px;
+	height: 25px;
+	padding-left: 15px;
+	filter: grayscale(100%);
+}
+/* No Filter for the active Game Version Icon*/
+.VersionImageActive{
+		width : 25px;
+	height: 25px;
+	padding-left: 15px;
+}
+
 .ArticleBuy{
     float:right;
     margin-top: 50px;

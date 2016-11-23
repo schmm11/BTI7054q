@@ -16,7 +16,7 @@
 	$img = new GameImage($product->getName().".png",$product->getName());
 ?>
 <article>
-	<h1> <?php echo $product->getName() ?></h1>
+	<h1> <?php echo $product->getName() ?> for <?php echo $product->getConsole()?></h1>
 	
 	<p class="ArticleText"> <?php echo $product->getDescription() ?> </p>
 	
@@ -24,7 +24,12 @@
 	<?php $img->render(); ?>
 	
     <div class="ArticleVersions">
-        Versionen
+        Versionen <br>
+		<?php constructGameVersions($product->getGameId(), $product->getConsole()); ?>
+		
+		
+		
+		
     </div>
     <div class="ArticleBuy"> <a href="buy.php?id=<?php echo $product->getId() ?>"><img src="media/buy_now_button.png" height="42" width="120"></a> </div>
     

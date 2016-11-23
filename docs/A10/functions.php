@@ -78,4 +78,32 @@ function content($pageId) {
 	echo t('content') . " $pageId";
 	}
 }
+
+function constructGameVersions($game_Id, $currentConsole){
+	
+	$products = Product::getGameVersions($game_Id);
+	$console = get_param('console', '0');
+	$parametersURL = "console=$console";	
+	foreach($products as $p){
+		if( $p->getConsole() == "PC"){
+			if($currentConsole == $p->getConsole()) $versionImageClass= "VersionImageActive";
+			else $versionImageClass= "VersionImage";
+			echo '<a href="article.php?article='.$p->getId()."&console=".$p->getConsoleId().'">'.'<img class="'.$versionImageClass.'" src="media/pc.png" alt="PC Icon" ></a>';
+		}
+		if( $p->getConsole() == "XBOX"){
+			if($currentConsole == $p->getConsole()) $versionImageClass= "VersionImageActive";
+			else $versionImageClass= "VersionImage";
+			echo '<a href="article.php?article='.$p->getId()."&console=".$p->getConsoleId().'">'.'<img class="'.$versionImageClass.'" src="media/xbox.png" alt="XBOX Icon" ></a>';
+		}
+		if( $p->getConsole() == "PS4"){
+			if($currentConsole == $p->getConsole()) $versionImageClass= "VersionImageActive";
+			else $versionImageClass= "VersionImage";
+			echo '<a href="article.php?article='.$p->getId()."&console=".$p->getConsoleId().'">'.'<img class="'.$versionImageClass.'" src="media/ps4.png" alt="PlaystationIcon" ></a>';
+		}
+	}
+}
+
+
+
+
 ?>

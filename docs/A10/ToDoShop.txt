@@ -12,7 +12,7 @@ db.inc.php for Webshop:
 
 <?php
 class DB extends mysqli{
-	const HOST="localhost", USER="nljguser_shopUser", PW="O6P4V!!C9#eP", DB_NAME="nljguser_theshop";
+	const HOST="localhost", USER="nljguser_shopUser", PW="***", DB_NAME="nljguser_theshop";
 	static private $instance;
 	private function __construct() {
 		parent::__construct(self::HOST, self::USER, self::PW, self::DB_NAME);
