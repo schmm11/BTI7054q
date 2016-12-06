@@ -2,7 +2,7 @@
 class DB extends mysqli{
 	const HOST="localhost", USER="root", PW="", DB_NAME="theshop";
 	static private $instance;
-	private function __construct() {
+	public function __construct() {
 		parent::__construct(self::HOST, self::USER, self::PW, self::DB_NAME);
 	}
 	static public function getInstance() {
