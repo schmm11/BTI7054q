@@ -1,36 +1,29 @@
 <?php
 require_once('autoloader.php');
 
-$_SESSION["user"] = "hans";
+session_start();
 
-if(isset($_POST["login"]) && isset($_POST["pw"])) {
+if(isset($_POST["login"]) && isset($_POST["pw"]))
+{
 	$login = $_POST["login"];
-	$pw = $_POST["pw"];
-	if (checklogin($login, $pw))
+	$password = $_POST["pw"];
+
+	if(checklogin($login, $password))
+	{
 		$_SESSION["user"] = $login;
+		$_SESSION["logged_in"] = true;
+	}
+	else
+	{
+		$_SESSION = [];
+		setcookie(session_name(), '', 1);
+		echo "<!DOCTYPE html>\n";
+		echo "<p style=\"color: red;\">Invalid credentials, please <a href=\"login.php\">try again</a>.</p>";
+	}
 }
-if (!isset($_SESSION["user"])) {
-	echo "<!DOCTYPE html>\n";
-	echo "<a href=\"login.php\">Something went wrong... <br>Please log in</a>.";
-exit;
-
-
 
 function checklogin($login, $password)
 {
-
 	$user = User::getUserByName($login);
-
-	/*
-	$stmt = $db->prepare(
-		"SELECT * FROM users WHERE username=?"
-	);
-	$stmt->bind_param('s', $login);
-	$stmt->execute();
-	$result = $stmt->get_result();
-	if (!$result || $result->num_rows !== 1) return false;
-	$row = $result->fetch_assoc();
-	*/
-	return password_verify($password, $user->password);
-
-?>
+	return ($user != null) && password_verify($password, $user->getPassword());
+}

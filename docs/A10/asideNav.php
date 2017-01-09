@@ -47,9 +47,9 @@ function showResult(str) {
 
 
     <aside>
-	
-	
-        <div id="search"> 
+
+
+        <div id="search">
             <!--
 			<form>
                 <input type="text" name="search"> <input type="submit" value="S">
@@ -61,10 +61,10 @@ function showResult(str) {
 				<div id="livesearch"></div>
         </div>
 
-		
-		
-		
-		
+
+
+
+
     <div id="asideNav">
         <ul>
             <li> <a href="bestseller.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $bestsellerText?> </a> </li>
@@ -73,8 +73,16 @@ function showResult(str) {
 			<br><br>
 			<li> <a href="test.php?<?php echo $parametersURL?>" class = "asideLink"> Nur eine testpage </a> </li>
 			<br><br>
-			<li> <a href="addProduct.php"class="asideLink">Admin Link </a></li>
-        </ul>
+			<?php
+			include_once 'authentication.inc.php';
+			$logged_in = (isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : false);
+			$username = (isset($_SESSION['user']) ? $_SESSION['user'] : null);
+			if($logged_in && $username == 'admin')
+			{
+				echo "<li><a href=\"addProduct.php\" class=\"asideLink\">" . $resource->tr('links.adminpage') . "</a></li>";
+			}
+			?>
+			</ul>
     </div>
-    
+
     </aside>

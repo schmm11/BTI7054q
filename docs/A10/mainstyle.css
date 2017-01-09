@@ -9,7 +9,7 @@ div.container {
 
 a{
 	color: WHITE;
-	
+
 }
 
 header{
@@ -19,10 +19,33 @@ header{
 	height: 200px;
 }
 
+#cart
+{
+	color: black;
+	border-collapse: collapse;
+}
+
+#cart th, #cart td
+{
+	border: 1px solid black;
+	padding: 10px 20px;
+}
+
+.menu li
+{
+	list-style-type: none;
+}
+
+.menu a
+{
+	text-decoration: none;
+}
+
 
 
 
 /* Top Navi */
+
 nav {
 	padding: 0em;
 	clear: left;
@@ -49,6 +72,7 @@ nav {
 	height: 25px;
 	background-color : #757575;
 }
+
 nav a:link {
     text-decoration: none;
 }
@@ -76,7 +100,7 @@ nav ul .active {
 nav ul {
 	padding: 0;
 	margin: 0;
-	
+
 }
 nav ul li {
 	float: left;
@@ -92,7 +116,7 @@ nav ul li {
 /* Aside Navigation*/
 aside {
     float: left;
-    width: 20%; 
+    width: 20%;
     margin: 0;
     padding: 1em;
     padding-top: 2em;
@@ -104,8 +128,8 @@ aside {
 
 aside ul li{
 	font-size: 26px;
-	color: WHITE; 
-	margin-bottom : 15px;	
+	color: WHITE;
+	margin-bottom : 15px;
 }
 
 aside a:link {
@@ -130,7 +154,7 @@ aside  a:active {
 
 #search{
     width: 70%;
-	max-width: 90%;	
+	max-width: 90%;
 }
 
 #livesearch a{
@@ -139,7 +163,7 @@ aside  a:active {
 
 #asideNav{
     margin-top: 50px;
-	
+
     /*background-color : #858585;*/
     width: 100%;
 }
@@ -148,7 +172,7 @@ aside  a:active {
 	padding: 0;
 }
 #asideNav a{
-    
+
 }
 
 /* Article */
@@ -170,11 +194,11 @@ article a{
 .ArticleText{
     overflow: auto;
     float: left;
-	
+
     width: 65%;
 	min-height: 300px;
     max-height: 390px;
-    
+
 }
 #ArticleImage{
     float: right;
@@ -186,7 +210,7 @@ article a{
     margin-top: 50px;
     width: 30%;
 	min-width: 70px;
-    text-align: center; 
+    text-align: center;
 }
 .VersionImage{
 	width : 25px;
@@ -211,21 +235,21 @@ article a{
     float:right;
     margin-top: 50px;
     width: 30%;
-    text-align: center; 
+    text-align: center;
 }
 
 
-/* Footer */ 
+/* Footer */
 footer {
-    
+
     background-color: #999999;
     clear: left;
     height: 30px;
-    
+
 }
 div #Impressum{
     height: 30px;
-   float: left; 
+   float: left;
    width: 70%;
 }
 div #Language{
@@ -238,8 +262,8 @@ div #Language{
     width: 25px;
     height: 25px;
     margin: 2px 5px 5px 15px;
-   
-    
+
+
 }
 
 /* Listen */

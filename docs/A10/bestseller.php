@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once('autoloader.php');
 	$console = get_param('console', '0');
 
@@ -6,7 +6,7 @@
 
     include_once "topNav.php";
     include_once "asideNav.php";
-	
+
 	if($_COOKIE["language"] == 'de'){
 		$titel = 'Beliebt';
 		$text = "Diese Seite ist sortiert nach ".consoleIdToString($console)." Titeln , sortiert nach Verkaufsrang.";
@@ -15,26 +15,26 @@
 		$titel = 'Best-seller';
 		$text = 'La meme pour la france';
 	}
-	
+
 	$parametersURL = "console=$console";
 	$groupBy = 'product.sold_units DESC';
 	$products = Product::getProducts($console, $groupBy);
 ?>
 
 <article>
-    
+
         <h1><?php echo $titel ?> </h1>
 	<p> <?php echo $text ?> </p>
-	
-	<table class ="ListTable"> 
+
+	<table class ="ListTable">
 			<tr>
 				<th> ID </th><th> Name </th><th> Console </th> <th> Category </th><th>Release Date</th><th> Price </th><th> ... </th>
 			</tr>
-		
-		
-		<?php 
-		
-		
+
+
+		<?php
+
+
 		foreach($products as $p){
 			echo "<tr>";
 			echo "<td>".$p->getId()."</td>";
@@ -58,4 +58,3 @@
     include_once "footer.php";
 ?>
 
-    

@@ -1,0 +1,23 @@
+{
+	"links":
+	{
+		"login": "Kundenlogin",
+		"logout": "Abmelden",
+		"cart": "Warenkorb",
+		"adminpage": "Produktverwaltung (Admin)"
+	},
+
+	"login":
+	{
+		"noaccount": "Noch kein Konto?",
+		"registerhere": "Dann melden Sie sich <a href=\"register.php\">hier</a> an."
+	},
+
+	"user":
+	{
+		"logout":
+		{
+			"success": "Sie wurden erfolgreich abgemeldet."
+		}
+	}
+}

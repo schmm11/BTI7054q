@@ -1,49 +1,41 @@
 <?php
-class Cart {
-private $items = [];
+
+require_once('autoloader.php');
+
+require_once('authentication.inc.php');
 
 
-function __construct(){
-	
-	
-	
-}
-
-
-public function removeItem($item, $num) {
-	if (!isset($this->items[$item])) return;
-	$this->items[$itemitem] -= $num;
-	if ($this->items[$item] <= 0)
-	unset($this->items[$item]);
-}
-public function getItems() {
-	return $this->items;
-}
-
-
-
-public function addItem($item, $num) {
-	if (!isset($this->items[$item])){
-		$this->items[$item] = 0;
+### Shopping cart
+if(!isset($cart) || !$cart)
+{
+	if(!isset($_SESSION['cart']) || $_SESSION['cart'] === null)
+	{
+		$_SESSION['cart'] = new ShoppingCart();
 	}
-	$this->items[$item] += $num;
+	$cart = $_SESSION['cart'];
 }
 
-public function isEmpty() {
-	return count($this->items) == 0;
-}
-public function countItem(){
-	return count($this->items);
-}
-
-public function render(){
-	if ($this->isEmpty()) {
-		echo "Empty Cart";
-		return;
+if(isset($_GET['buy']) && isset($_GET['amount']))
+{
+	$article = $_GET['buy'];
+	$amount = $_GET['amount'];
+	if($article && $amount)
+	{
+		$cart->addItem($article, $amount);
 	}
-	echo "Has Items...";
-	
-	
+
+	echo $cart->size();
+}
+else
+{
+	include('header.php');
+	$console = get_param('console', 0);
+	include('topNav.php');
+	include('asideNav.php');
+
+	$cart->render();
+
+	include('footer.php');
 }
 
-}
+?>

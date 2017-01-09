@@ -1,8 +1,8 @@
 <?php
 class User {
 	private $id, $username, $name, $first_name, $street, $street_number, $postal_code, $city, $mailaddress, $password;
-	
-	
+
+
 	public function getId() {
 		return $this->id;
 	}
@@ -33,15 +33,15 @@ class User {
 	public function getPassword(){
 		return $this->password;
 	}
-	
+
 	public function __toString(){
 		return $this->username;
 	}
 
-	
+
 static public function getUserByName($username) {
-		$name =  $name; // NEEDS to get Safe => Injection
-		$res = DB::doQuery("SELECT 
+		$username =  $username; // NEEDS to get Safe => Injection
+		$res = DB::doQuery("SELECT
 			users.id AS id,
 			users.username AS username,
 			users.name AS name,
@@ -53,11 +53,17 @@ static public function getUserByName($username) {
 			users.mail as mailadress,
 			users.password_hash AS password
 			FROM users
-			WHERE username = ".$username.";
+			WHERE username = '".$username."';
 			"
 		);
 	if (!$res) return null;
-		return $res->fetch_object(get_class());	
+		return $res->fetch_object(get_class());
 }
 
+	static public function createUserByName($username, $password)
+	{
+		$password_hash = password_hash($password, PASSWORD_BCRYPT);
+		return DB::doQuery("INSERT INTO users (id, username, name, first_name, street, street_number, postal_code, city, mail, password_hash) VALUES (
+			NULL, '$username', 'Mustermann', 'Max', 'Musterweg', 42, 3000, 'Bern', 'max.mustermann@be.ch', '$password_hash');");
+	}
 }
