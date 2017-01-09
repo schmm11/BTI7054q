@@ -7,15 +7,6 @@
     include_once "topNav.php";
     include_once "asideNav.php";
 
-	if($_COOKIE["language"] == 'de'){
-		$titel = 'Beliebt';
-		$text = "Diese Seite ist sortiert nach ".consoleIdToString($console)." Titeln , sortiert nach Verkaufsrang.";
-	}
-	if($_COOKIE["language"] == 'fr'){
-		$titel = 'Best-seller';
-		$text = 'La meme pour la france';
-	}
-
 	$parametersURL = "console=$console";
 	$groupBy = 'product.sold_units DESC';
 	$products = Product::getProducts($console, $groupBy);
@@ -23,8 +14,8 @@
 
 <article>
 
-        <h1><?php echo $titel ?> </h1>
-	<p> <?php echo $text ?> </p>
+        <h1><?php echo $resource->tr('text.bestsellerTitle')?></h1>
+        <p> <?php echo $resource->tr('text.bestsellerText')?></p>
 
 	<table class ="ListTable">
 			<tr>

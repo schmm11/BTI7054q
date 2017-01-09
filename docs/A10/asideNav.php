@@ -1,16 +1,5 @@
 <?php
 require_once('autoloader.php');
-if($_COOKIE["language"] == 'de'){
-	$bestsellerText = 'Bestseller';
-	$releaseText = 'Neuheiten';
-	$budgetText = 'Budget';
-}
-
-if($_COOKIE["language"] == 'fr'){
-	$bestsellerText = 'Best-Seller';
-	$releaseText = 'Nouveau';
-	$budgetText = 'favorable';
-}
 
 $parametersURL = "console=$console";
 
@@ -21,7 +10,7 @@ $parametersURL = "console=$console";
 function showResult(str) {
   if (str.length==0) {
     document.getElementById("livesearch").innerHTML="";
-    document.getElementById("livesearch").style.border="0px";
+    document.getElementById("livesearch").style.border="1px";
     return;
   }
   if (window.XMLHttpRequest) {
@@ -67,11 +56,9 @@ function showResult(str) {
 
     <div id="asideNav">
         <ul>
-            <li> <a href="bestseller.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $bestsellerText?> </a> </li>
-            <li> <a href="releases.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $releaseText?></a> </li>
-            <li> <a href="budget.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $budgetText?></a> </li>
-			<br><br>
-			<li> <a href="test.php?<?php echo $parametersURL?>" class = "asideLink"> Nur eine testpage </a> </li>
+            <li> <a href="bestseller.php?<?php echo $parametersURL ?>" class = "asideLink"> <?php echo $resource->tr('nav.bestseller')?> </a> </li>
+            <li> <a href="releases.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $resource->tr('nav.releases')?></a> </li>
+            <li> <a href="budget.php?<?php echo $parametersURL?>" class = "asideLink"> <?php echo $resource->tr('nav.budget')?></a> </li>
 			<br><br>
 			<?php
 			include_once 'authentication.inc.php';

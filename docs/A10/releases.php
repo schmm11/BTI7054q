@@ -10,15 +10,6 @@
     include "topNav.php";
     include "asideNav.php";
 	
-	if($_COOKIE["language"] == 'de'){
-		$titel = 'Releases';
-		$text = "Diese Seite ist sortiert nach ".consoleIdToString($console)." Titeln , sortiert nach Veröffentlichung.";
-	}
-	if($_COOKIE["language"] == 'fr'){
-		$titel = 'Nouveau';
-		$text = 'La meme pour la france';
-	}
-	
 	$parametersURL = "console=$console";
 	$groupBy = 'game.releaseDate DESC';
 	$products = Product::getProducts($console, $groupBy);
@@ -26,8 +17,8 @@
 
 <article>
     
-        <h1><?php echo $titel ?> </h1>
-	<p> <?php echo $text ?> </p>
+        <h1><?php echo $resource->tr('text.releasesTitle')?></h1>
+        <p> <?php echo $resource->tr('text.releasesText')?></p>
 	
 	
 		<table class ="ListTable"> 

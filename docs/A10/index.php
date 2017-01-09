@@ -7,19 +7,11 @@
     include "topNav.php";
     include "asideNav.php";
 	
-	if($_COOKIE["language"] == 'de'){
-		$helloText = 'Willkommen in unserem Shop';
-	}
-
-	if($_COOKIE["language"] == 'fr'){
-		$helloText = 'Bienvenue sur notre site';
-	}
-	
     ?>
     <article>
     
-        <h1><?php echo $helloText?></h1>
-        <p> and Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomecomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcomeand Welcome</p>
+        <h1><?php echo $resource->tr('text.welcomeTitle')?></h1>
+        <p> <?php echo $resource->tr('text.welcomeText')?></p>
    
     </article>
 <?php

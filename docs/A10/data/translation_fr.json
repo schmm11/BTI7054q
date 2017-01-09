@@ -1,3 +1,44 @@
 {
-	"adminpage.link": "Page de l'administrateur"
+	"links":
+	{
+		"login": "la Login",
+		"logout": "le logout",
+		"cart": "Panier",
+		"adminpage": "page de l administrateur"
+	},
+
+	"login":
+	{
+		"noaccount": "pas de compte",
+		"registerhere": "Vous pouvez inscriptez <a href=\"register.php\">ici</a>"
+	},
+
+	"user":
+	{
+		"logout":
+		{
+			"success": "logout success"
+		}
+	},
+	"nav":
+	{
+		"bestseller": "En Vogue",
+		"releases": "Nouveau",
+		"budget": "favorable"
+	},
+	"cart":
+	{
+		"empty": "Le panier est null"
+	},
+	"text":
+	{
+		"welcomeTitle": "Bienvenu a notre Shop",
+		"welcomeText": "Ici cest BLA BLA BLA en francais",
+		"bestsellerTitle": "Bestseller",
+		"bestsellerText": "Sorte de bestseller",
+		"releasesTitle": "Nouveau",
+		"releasesText": "Sorte a date de release",
+		"budgetTitle": "Favorable",
+		"budgetText": "sorte a la prix"
+	}
 }

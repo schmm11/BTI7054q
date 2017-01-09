@@ -19,5 +19,26 @@
 		{
 			"success": "Sie wurden erfolgreich abgemeldet."
 		}
+	},
+	"nav":
+	{
+		"bestseller": "Best",
+		"releases": "Neuheiten",
+		"budget": "Budget"
+	},
+	"cart":
+	{
+		"empty": "Der Warenkorb ist noch leer."
+	},
+	"text":
+	{
+		"welcomeTitle": "Willkommen in unserem Shop",
+		"welcomeText": "Hier wird noch ein Einfuehrungstext hinkommen",
+		"bestsellerTitle": "Bestseller",
+		"bestsellerText": "Diese Seite ist sortiert nach den verkauften Einheiten eines Produktes",
+		"releasesTitle": "Neuheiten",
+		"releasesText": "Diese Seite ist sortiert nach dem Releasedatum der Games",
+		"budgetTitle": "Budget",
+		"budgetText": "Sortiert nach dem Preis"
 	}
 }
