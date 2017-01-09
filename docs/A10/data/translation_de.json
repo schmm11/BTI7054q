@@ -30,7 +30,9 @@
 	{
 		"empty": "Der Warenkorb ist noch leer.",
 		"login": "Loggen Sie sich ein um den Kauf abzuschliessen",
-		"checkout": "Weiter zur Adresseingabe"
+		"checkout": "Weiter zur Adresseingabe",
+		"totalCost": " Totaler Preis:",
+		"totalAmount": " Anzahl Items im Warenkorb:"
 	},
 	"text":
 	{

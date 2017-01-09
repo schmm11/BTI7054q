@@ -70,6 +70,11 @@ nav {
 	height: 25px;
 	width: 15%;
 }
+#warenkorb ul li{
+	margin-right: 0;
+}
+
+
 #user_navi{
 	float: left;
 	width: 15%;

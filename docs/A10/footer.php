@@ -3,7 +3,7 @@
 ?>
 
 <footer>
-    <div id="Impressum">Impressum u so Quark</div>
+    <div id="Impressum">Impressum u so Zeugs</div>
     <div id="Language">
 	
     <!--<a href="index.php?lang=de"><img class="LanguageIcon" src="media/german_flag.png" alt="Deutsch"></a>

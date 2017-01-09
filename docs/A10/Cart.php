@@ -23,8 +23,6 @@ if(isset($_GET['buy']) && isset($_GET['amount']))
 	{
 		$cart->addItem($article, $amount);
 	}
-
-	echo $cart->size();
 }
 else
 {

@@ -14,7 +14,7 @@ final class ShoppingCart
 	/** adds a specific item to the cart, default amount: 1 */
 	public function addItem($item, $num = 1)
 	{
-		if(!isset($this->items[$item]) || ($this->items[$item] > 0))
+		if(!isset($this->items[$item]) || ($this->items[$item] < 0))
 		{
 			$this->items[$item] = 0;
 		}
@@ -42,6 +42,15 @@ final class ShoppingCart
 				$cost += $product->getPrice()*$amount;
 			}
 		return $cost;
+	}
+	/** return the total amount of items */
+	public function getTotalAmount(){
+		static $i = 0; 
+			foreach($this->items as $item => $amount)
+			{
+				$i += $amount;
+			}
+		return $i;
 	}
 
 	/** returns whether or not the cart is empty */
@@ -82,7 +91,9 @@ final class ShoppingCart
 					<tr> </tr>
 			</table>
 			</div>
-			<?php echo "<p>Total Cost is: ".$this->getTotalCost()."</p>";
+			<?php 
+			echo "<p>".$resource->tr('cart.totalCost')."<b> ".$this->getTotalCost()." sFr.- </b></p>";
+			echo "<p>".$resource->tr('cart.totalAmount')."<b> ".$this->getTotalAmount()/2 ."</b></p>";
 			
 			if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'])
 			{

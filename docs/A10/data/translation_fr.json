@@ -30,7 +30,9 @@
 	{
 		"empty": "Le panier est null",
 		"login": "S il vous plais login",
-		"checkout": "finir adress bla"
+		"checkout": "finir adress bla",
+		"totalCost": " prix total:",
+		"totalAmount": " produits total:"
 	},
 	"text":
 	{

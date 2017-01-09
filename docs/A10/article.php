@@ -44,10 +44,9 @@
 				{
 					if(this.readyState == 4 && this.status == 200)
 					{
-						alert(this.responseText);
+						alert("Produkt wurde dem Warenkorb hinzugefügt");
 					}
 				}
-				//xmlhttp.open("GET","livesearch.php?q="+str,true);
 				xmlHttp.open('GET', 'Cart.php?buy='+articleId+'&amount=1', true);
 				xmlHttp.send();
 			}
