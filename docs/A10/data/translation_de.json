@@ -28,7 +28,9 @@
 	},
 	"cart":
 	{
-		"empty": "Der Warenkorb ist noch leer."
+		"empty": "Der Warenkorb ist noch leer.",
+		"login": "Loggen Sie sich ein um den Kauf abzuschliessen",
+		"checkout": "Weiter zur Adresseingabe"
 	},
 	"text":
 	{
@@ -40,5 +42,12 @@
 		"releasesText": "Diese Seite ist sortiert nach dem Releasedatum der Games",
 		"budgetTitle": "Budget",
 		"budgetText": "Sortiert nach dem Preis"
+	},
+	"checkout":
+	{
+		"title": "Checkout",
+		"text": "Bitte geben Sie ihre Adresse ein und bestätigen Sie den Kauf:",
+		"confirm": "Kauf abschliessen",
+		"checkout": "Mit dem Klick auf Bestellung abschliessen akzeptieren Sie die AGB's"
 	}
 }

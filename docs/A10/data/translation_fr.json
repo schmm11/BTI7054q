@@ -28,7 +28,9 @@
 	},
 	"cart":
 	{
-		"empty": "Le panier est null"
+		"empty": "Le panier est null",
+		"login": "S il vous plais login",
+		"checkout": "finir adress bla"
 	},
 	"text":
 	{
@@ -40,5 +42,12 @@
 		"releasesText": "Sorte a date de release",
 		"budgetTitle": "Favorable",
 		"budgetText": "sorte a la prix"
+	},
+	"checkout":
+	{
+		"title": "Checkout",
+		"text": "S il vous plait bla bla adress",
+		"confirm": "finir",
+		"checkoutText": "bla bla bla "
 	}
 }

@@ -14,7 +14,7 @@ final class ShoppingCart
 	/** adds a specific item to the cart, default amount: 1 */
 	public function addItem($item, $num = 1)
 	{
-		if(!isset($this->items[$item]))
+		if(!isset($this->items[$item]) || ($this->items[$item] > 0))
 		{
 			$this->items[$item] = 0;
 		}
@@ -33,6 +33,16 @@ final class ShoppingCart
 
 		return $count;
 	}
+	/** return the total cost of all the items */
+	public function getTotalCost(){
+		static $cost = 0; 
+			foreach($this->items as $item => $amount)
+			{
+				$product = Product::getProductById($item);
+				$cost += $product->getPrice()*$amount;
+			}
+		return $cost;
+	}
 
 	/** returns whether or not the cart is empty */
 	public function isEmpty()
@@ -43,6 +53,7 @@ final class ShoppingCart
 	/** renders the cart to HTML */
 	public function render()
 	{
+		echo "<article>";
 		global $resource;
 		if($this->isEmpty())
 		{
@@ -51,23 +62,37 @@ final class ShoppingCart
 		else
 		{
 			?>
-
-			<table id="cart">
-				<thead>
-					<tr><th>Item</th><th>Amount</th></tr>
-				</thead>
-				<tbody>
+			<div id = "cart">
+			<table>
+				<tr><th>Item</th><th>Console</th><th>Amount</th> <th>Price</th><th>Decrease/Increase</th></tr>
 					<?php
+						static $cost = 0; 
 						foreach($this->items as $item => $amount)
 						{
-							echo "<tr><td>$item</td><td>$amount</td></tr>";
+							$product = Product::getProductById($item);
+							
+							echo "<tr><td>".$product->getName()."</td>
+							<td>".$product->getConsole()."</td>
+							<td>$amount</td>
+							<td>".$product->getPrice()*$amount."</td>
+							<td>
+							</tr>";
 						}
 					?>
-					<tr>
-					</tr>
-				</tbody>
+					<tr> </tr>
 			</table>
-			<?php
+			</div>
+			<?php echo "<p>Total Cost is: ".$this->getTotalCost()."</p>";
+			
+			if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'])
+			{
+				echo "<li><a href=\"checkout.php\">" . $resource->tr('cart.checkout') . "</a></li>";
+			}
+			else
+			{
+				echo "<li><a href=\"login.php\">" . $resource->tr('cart.login') . "</a></li>";
+			}
 		}
+		echo "</article>";
 	}
 }

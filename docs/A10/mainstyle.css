@@ -21,8 +21,12 @@ header{
 
 #cart
 {
+	align = "center";
+}
+#cart table{
 	color: black;
 	border-collapse: collapse;
+	
 }
 
 #cart th, #cart td
