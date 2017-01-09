@@ -20,11 +20,28 @@
 			<td><label> Name: </label></td>
 			<td> <?php echo $_SESSION['user'] ?></td>
 		</tr>
-			<tr>
-				<td><label>Adress</label></td>
-				<td><input type="text" name="adress"/>	</td>
-			</tr>
+		<tr>
+			<td><label><?php echo $resource->tr('adress.street') ?>: </label></td>
+			<td><input type="text" name="street" value="<?php echo isset($_COOKIE["street"]) ? $_COOKIE["street"] : "";?>" required />	</td>
+		</tr>
+		
+		<tr>
+			<td><label><?php echo $resource->tr('adress.streetnumber') ?>: </label></td>
+			<td><input type="text" name="streetnumber" value="<?php echo isset($_COOKIE["streetnumber"]) ? $_COOKIE["streetnumber"] : "";?>" required />	</td>
+		</tr>
+		
+		<tr>
+			<td><label><?php echo $resource->tr('adress.plz') ?>: </label></td>
+			<td><input type="number" name="plz" value="<?php echo isset($_COOKIE["plz"]) ? $_COOKIE["plz"] : "";?>" required />	</td>
+		</tr>
+		
+		<tr>
+			<td><label><?php echo $resource->tr('adress.town') ?>: </label></td>
+			<td><input type="text" name="town" value="<?php echo isset($_COOKIE["town"]) ? $_COOKIE["town"] : "";?>" required/>	</td>
+		</tr>
 		</table>
+		<br><br>
+		<p> <?php echo $resource->tr('checkout.confirmText') ?> </p>
 		<input type="submit" value="<?php echo $resource->tr('checkout.confirm') ?>" />
 	</form>
 
@@ -33,4 +50,5 @@
 <?php
     include_once "footer.php";
 ?>
+
 

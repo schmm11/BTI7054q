@@ -48,6 +48,18 @@
 		"title": "Checkout",
 		"text": "Bitte geben Sie ihre Adresse ein und bestätigen Sie den Kauf:",
 		"confirm": "Kauf abschliessen",
-		"checkout": "Mit dem Klick auf Bestellung abschliessen akzeptieren Sie die AGB's"
+		"confirmText": "Mit dem Klick auf Bestellung abschliessen akzeptieren Sie die AGB's"
+	},
+	"adress":
+	{
+		"street": "Strasse",
+		"streetnumber": "Strassennummer",
+		"plz": "Postleitzahl",
+		"town": "Stadt"
+	},
+	"buySucess":
+	{
+		"title": "Kauf abgeschlossen",
+		"text": "Die Produkte und die Rechnung wird an folgende Adresse geschickt: "
 	}
 }

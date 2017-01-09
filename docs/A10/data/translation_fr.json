@@ -48,6 +48,18 @@
 		"title": "Checkout",
 		"text": "S il vous plait bla bla adress",
 		"confirm": "finir",
-		"checkoutText": "bla bla bla "
+		"confirmText": "bla bla bla "
+	},
+	"adress":
+	{
+		"street": "Rue",
+		"streetnumber": "Nummer de Rue",
+		"plz": "PLC",
+		"town": "ville"
+	},
+	"buySucess":
+	{
+		"title": "Kauf abgeschlossen en francais",
+		"text": "bla bla bla "
 	}
 }
