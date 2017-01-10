@@ -2,7 +2,7 @@
 	require_once "db.inc.php";
 	require_once "Product.php";
 	require_once "functions.php";
-	
+
 	// @ Cause of the silly notices acout q not defined
 	@search();
 
@@ -17,16 +17,15 @@ $q=$_GET["q"];
 if (strlen($q)>0) {
   $hint="";
   foreach($allProducts as $p){
-		
+
 		$text = $p->getName();
-		
-		
+
+
 		 if (stristr($text,$q)) {
-		 
+
 			if ($hint=="") {
 			  $hint="<a href=article.php?article=" .
-			  $p->getID().
-			  " target='_blank'>" .
+			  $p->getID(). ">" .
 			  $text . " ".$p->getConsole()."</a>";
 			} else {
 			  $hint=$hint . "<br /><a href=article.php?article=" .
@@ -35,7 +34,7 @@ if (strlen($q)>0) {
 			  $text . " ".$p->getConsole()."</a>";
 			}
 		}
-}	
+}
 	// Set output to "no suggestion" if no hint was found
 	// or to the correct values
 	if ($hint=="") {
@@ -46,6 +45,6 @@ if (strlen($q)>0) {
 
 //output the response
 	echo $response;
-	}		
+	}
 }
-?> 
+?>

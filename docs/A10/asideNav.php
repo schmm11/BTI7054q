@@ -45,7 +45,24 @@ function showResult(str) {
             </form>
 			-->
 			<form>
-				<input type="text" size="30" onkeyup="showResult(this.value)">
+				<?php
+					echo '<input style="color: lightgrey;" value="' . $resource->tr('search') . '" onfocus="onSearchFocus(this)" onblur="onSearchBlur(this)" type="text" onkeyup="showResult(this.value)">';
+				?>
+				<script>
+					function onSearchFocus(elem)
+					{
+						elem.value = ''
+						elem.style.color = "black"
+					}
+					function onSearchBlur(elem)
+					{
+						if(elem.value === '')
+						{
+							elem.value = '<?php echo $resource->tr('search') ?>'
+							elem.style.color = "lightgrey"
+						}
+					}
+				</script>
 			</form>
 				<div id="livesearch"></div>
         </div>
