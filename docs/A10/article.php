@@ -32,8 +32,9 @@
 
     </div>
 		<div class="ArticleBuy">
+		<?php echo "<p>".$product->getPrice()." sFr.-</p>";?>
 			<a class="buy_article" onclick="buyArticle(<?php echo $articleId ?>)">
-				<img src="media/buy_now_button.png" height="42" width="120">
+				<img src="media/buy_now_button.png" height="60" width="60">
 			</a>
 		</div>
 		<script>

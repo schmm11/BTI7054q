@@ -6,8 +6,9 @@ $password = (isset($_POST["password"]) ? $_POST["password"] : null);
 
 if($username && $password)
 {
-	echo "Registriere Nutzer '$username' mit Passwort '$password'";
-	echo User::createUserByName($username, $password);
+	User::createUserByName($username, $password);
+	header("Location: /webshop/login.php"); 
+	
 }
 
 include 'header.php';
