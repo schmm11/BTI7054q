@@ -26,12 +26,12 @@ if (strlen($q)>0) {
 			if ($hint=="") {
 			  $hint="<a href=article.php?article=" .
 			  $p->getID().
-			  "' target='_blank'>" .
+			  " target='_blank'>" .
 			  $text . " ".$p->getConsole()."</a>";
 			} else {
 			  $hint=$hint . "<br /><a href=article.php?article=" .
 			  $p->getID().
-			   "' target='_blank'>" .
+			   " target='_blank'>" .
 			  $text . " ".$p->getConsole()."</a>";
 			}
 		}
