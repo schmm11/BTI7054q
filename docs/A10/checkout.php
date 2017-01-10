@@ -27,7 +27,7 @@
 		
 		<tr>
 			<td><label><?php echo $resource->tr('adress.streetnumber') ?>: </label></td>
-			<td><input type="text" name="streetnumber" value="<?php echo isset($_COOKIE["streetnumber"]) ? $_COOKIE["streetnumber"] : "";?>" required />	</td>
+			<td><input type="number" name="streetnumber" value="<?php echo isset($_COOKIE["streetnumber"]) ? $_COOKIE["streetnumber"] : "";?>" required />	</td>
 		</tr>
 		
 		<tr>

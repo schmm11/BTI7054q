@@ -63,5 +63,6 @@
 	{
 		"title": "Acheter complète",
 		"text": "Le produit et la facture seront envoyée a cette adresse: "
-	}
+	},
+	"search": "chercher"
 }
