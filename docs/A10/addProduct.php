@@ -50,7 +50,7 @@
 		<option value="3">Adventure</option>
 		<option value="4">Shooter</option>
 	</select> </td></tr>
-	<tr><td>Manufactrurer: </td><td><input type ="text" name = "game_manufacturer" maxlength="30" required></td></tr>
+	<tr><td>Manufacturer: </td><td><input type ="text" name = "game_manufacturer" maxlength="30" required></td></tr>
 	<tr><td>	Release Date: </td><td><input type="date" name="game_releaseDate" value="2016-12-10" required></td></tr>
 
 

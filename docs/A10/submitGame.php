@@ -21,6 +21,7 @@ if (isset($_POST['button_game'])) {
 	*/
 	$target_dir = "media/productImages/";
 	$imageFileType = pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION);
+	// Image wird umbennant nach game_name
 	$target_file = $target_dir . $game_name."." .$imageFileType ;
 	$uploadOk = 1;
 	

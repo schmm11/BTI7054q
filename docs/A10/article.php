@@ -44,7 +44,7 @@
 				{
 					if(this.readyState == 4 && this.status == 200)
 					{
-						alert("Produkt wurde dem Warenkorb hinzugefügt");
+						alert("Added Item to the cart");
 					}
 				}
 				xmlHttp.open('GET', 'Cart.php?buy='+articleId+'&amount=1', true);
