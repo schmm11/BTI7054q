@@ -22,6 +22,22 @@ final class ShoppingCart
 		$this->items[$item] += $num;
 	}
 
+	/** removes a specific item from the default, default amount: 1 */
+	public function removeItem($item, $num = 1)
+	{
+		if(isset($this->items[$item]))
+		{
+			if($this->items[$item] > 1)
+			{
+				$this->items[$item] -= 1;
+			}
+			else
+			{
+				unset($this->items[$item]);
+			}
+		}
+	}
+
 	/** returns the amount of items contained in the cart */
 	public function size()
 	{
@@ -33,9 +49,10 @@ final class ShoppingCart
 
 		return $count;
 	}
+
 	/** return the total cost of all the items */
 	public function getTotalCost(){
-		static $cost = 0; 
+		$cost = 0;
 			foreach($this->items as $item => $amount)
 			{
 				$product = Product::getProductById($item);
@@ -45,7 +62,7 @@ final class ShoppingCart
 	}
 	/** return the total amount of items */
 	public function getTotalAmount(){
-		static $i = 0; 
+		$i = 0;
 			foreach($this->items as $item => $amount)
 			{
 				$i += $amount;
@@ -75,26 +92,26 @@ final class ShoppingCart
 			<table>
 				<tr><th>Item</th><th>Console</th><th>Amount</th> <th>Price</th><th>Decrease/Increase</th></tr>
 					<?php
-						static $cost = 0; 
+						static $cost = 0;
 						foreach($this->items as $item => $amount)
 						{
 							$product = Product::getProductById($item);
-							
+
 							echo "<tr><td>".$product->getName()."</td>
 							<td>".$product->getConsole()."</td>
 							<td>$amount</td>
 							<td>".$product->getPrice()*$amount."</td>
-							<td>
+							<td><a class=\"cart-button\" href=\"Cart.php?inc=" . $item . "&amount=1\">+</a><a class=\"cart-button\" href=\"Cart.php?dec=" . $item . "&amount=1\">-</a></td>
 							</tr>";
 						}
 					?>
 					<tr> </tr>
 			</table>
 			</div>
-			<?php 
+			<?php
 			echo "<p>".$resource->tr('cart.totalCost')."<b> ".$this->getTotalCost()." sFr.- </b></p>";
-			echo "<p>".$resource->tr('cart.totalAmount')."<b> ".$this->getTotalAmount()/2 ."</b></p>";
-			
+			echo "<p>".$resource->tr('cart.totalAmount')."<b> ".$this->size() ."</b></p>";
+
 			if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'])
 			{
 				echo "<li><a href=\"checkout.php\">" . $resource->tr('cart.checkout') . "</a></li>";

@@ -7,6 +7,21 @@ div.container {
 	font-family: Arial;
 }
 
+.cart-button
+{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 2px;
+	border: 1px solid black;
+	text-align: center;
+	line-height: 32px;
+	text-decoration: none;
+	font-size: 20pt;
+	border-radius: 100%;
+	background: lightgray;
+}
+
 a{
 	color: WHITE;
 
@@ -19,6 +34,12 @@ header{
 	height: 200px;
 }
 
+header a
+{
+	display: block;
+	height: 200px;
+}
+
 #cart
 {
 	align = "center";
@@ -26,7 +47,7 @@ header{
 #cart table{
 	color: black;
 	border-collapse: collapse;
-	
+
 }
 
 #cart th, #cart td

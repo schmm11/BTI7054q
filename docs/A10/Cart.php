@@ -22,11 +22,29 @@ if(isset($_GET['buy']) && isset($_GET['amount']))
 	if($article && $amount)
 	{
 		$cart->addItem($article, $amount);
+		echo $cart->size();
 	}
 }
 else
 {
+	$dec = (isset($_GET['dec']) ? $_GET['dec'] : null);
+	$inc = (isset($_GET['inc']) ? $_GET['inc'] : null);
+	$am = (isset($_GET['amount']) ? $_GET['amount'] : 0);
+
+	if($am)
+	{
+		if($dec)
+		{
+			$cart->removeItem($dec, $am);
+		}
+		if($inc)
+		{
+			$cart->addItem($inc, $am);
+		}
+	}
+
 	include('header.php');
+
 	$console = get_param('console', 0);
 	include('topNav.php');
 	include('asideNav.php');

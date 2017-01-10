@@ -31,7 +31,8 @@
 
 	<div id="warenkorb">
 		<ul>
-			<?php echo "<li><a href=\"Cart.php\">" . $resource->tr('links.cart') ." ". $_SESSION['cart']->getTotalAmount()."</a></li>"; ?>
+			<?php $size = ($cart->isEmpty() ? '' : ' (' . $cart->size() . ')'); ?>
+			<?php echo "<li><a id=\"cart-link\" href=\"Cart.php\">" . $resource->tr('links.cart') . $size . "</a></li>"; ?>
 		</ul>
 	</div>
 </nav>

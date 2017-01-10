@@ -39,4 +39,5 @@ if(!isset($cart) || !$cart)
 	<body>
 		<div class="container">
 			<header>
+				<a href="index.php" />
 			</header>

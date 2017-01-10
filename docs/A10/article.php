@@ -44,7 +44,9 @@
 				{
 					if(this.readyState == 4 && this.status == 200)
 					{
-						alert("Added Item to the cart");
+						<?php
+							echo 'document.getElementById("cart-link").innerHTML = "' . $resource->tr('links.cart') . " (\" + this.responseText.replace(/^\s+/g,'') + \")\"";
+						?>
 					}
 				}
 				xmlHttp.open('GET', 'Cart.php?buy='+articleId+'&amount=1', true);
