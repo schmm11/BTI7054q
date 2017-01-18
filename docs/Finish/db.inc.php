@@ -1,5 +1,6 @@
 <?php
 class DB extends mysqli{
+	// Constants for the local xammp shop => real values in passwordSafe	
 	const HOST="localhost", USER="root", PW="", DB_NAME="theshop";
 	static private $instance;
 	public function __construct() {

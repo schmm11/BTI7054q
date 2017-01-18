@@ -19,7 +19,7 @@ if($username && $password && email)
 
 	mail($empfaenger, $betreff, $nachricht, $header);
 	
-	header("Location: /webshop/login.php"); 
+	header("Location: /login.php"); 
 	
 }
 
