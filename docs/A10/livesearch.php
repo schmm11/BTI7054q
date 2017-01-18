@@ -30,7 +30,7 @@ if (strlen($q)>0) {
 			} else {
 			  $hint=$hint . "<br /><a href=article.php?article=" .
 			  $p->getID().
-			   " target='_blank'>" .
+			   ">" .
 			  $text . " ".$p->getConsole()."</a>";
 			}
 		}

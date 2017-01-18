@@ -1,0 +1,68 @@
+{
+	"links":
+	{
+		"login": "Kundenlogin",
+		"logout": "Abmelden",
+		"cart": "Warenkorb",
+		"adminpage": "Produktverwaltung (Admin)"
+	},
+
+	"login":
+	{
+		"noaccount": "Noch kein Konto?",
+		"registerhere": "Dann melden Sie sich <a href=\"register.php\">hier</a> an."
+	},
+
+	"user":
+	{
+		"logout":
+		{
+			"success": "Sie wurden erfolgreich abgemeldet."
+		}
+	},
+	"nav":
+	{
+		"bestseller": "Best",
+		"releases": "Neuheiten",
+		"budget": "Budget"
+	},
+	"cart":
+	{
+		"empty": "Der Warenkorb ist noch leer.",
+		"login": "Loggen Sie sich ein um den Kauf abzuschliessen",
+		"checkout": "Weiter zur Adresseingabe",
+		"totalCost": " Totaler Preis:",
+		"totalAmount": " Anzahl Items im Warenkorb:"
+	},
+	"text":
+	{
+		"welcomeTitle": "Willkommen in unserem Shop.",
+		"welcomeText": "Hier wird noch ein Einfuehrungstext hinkommen",
+		"bestsellerTitle": "Bestseller",
+		"bestsellerText": "Diese Seite ist sortiert nach den verkauften Einheiten eines Produktes",
+		"releasesTitle": "Neuheiten",
+		"releasesText": "Diese Seite ist sortiert nach dem Releasedatum der Games",
+		"budgetTitle": "Budget",
+		"budgetText": "Sortiert nach dem Preis"
+	},
+	"checkout":
+	{
+		"title": "Checkout",
+		"text": "Bitte geben Sie ihre Adresse ein und bestätigen Sie den Kauf:",
+		"confirm": "Kauf abschliessen",
+		"confirmText": "Mit dem Klick auf Bestellung abschliessen akzeptieren Sie die AGB's"
+	},
+	"adress":
+	{
+		"street": "Strasse",
+		"streetnumber": "Strassennummer",
+		"plz": "Postleitzahl",
+		"town": "Stadt"
+	},
+	"buySucess":
+	{
+		"title": "Kauf abgeschlossen",
+		"text": "Die Produkte und die Rechnung wird an folgende Adresse geschickt: "
+	},
+	"search": "Suche"
+}

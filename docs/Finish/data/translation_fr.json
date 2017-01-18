@@ -1,0 +1,68 @@
+{
+	"links":
+	{
+		"login": "Login",
+		"logout": "Logout",
+		"cart": "Chariot",
+		"adminpage": "Administration des produits"
+	},
+
+	"login":
+	{
+		"noaccount": "Pas de compte?",
+		"registerhere": "Alors inscrivez vous <a href=\"register.php\">ici</a>."
+	},
+
+	"user":
+	{
+		"logout":
+		{
+			"success": "Logout réussi"
+		}
+	},
+	"nav":
+	{
+		"bestseller": "Best-seller",
+		"releases": "Noveautés",
+		"budget": "Budget"
+	},
+	"cart":
+	{
+		"empty": "Le chariot est encore vide.",
+		"login": "S'il vous plaît identifié-vous pour finir votre achat.",
+		"checkout": "Entrée d'adresses.",
+		"totalCost": " Prix total:",
+		"totalAmount": " Produits total:"
+	},
+	"text":
+	{
+		"welcomeTitle": "Bienvenue dans notre webshop.",
+		"welcomeText": "Nous sommes deux étudiants qui on fait ce projét.",
+		"bestsellerTitle": "Best-seller",
+		"bestsellerText": "Trié après le nombre de vente",
+		"releasesTitle": "Noveautés",
+		"releasesText": "Trié après la date de sortie",
+		"budgetTitle": "Budget",
+		"budgetText": "Trié après le prix"
+	},
+	"checkout":
+	{
+		"title": "Check-out",
+		"text": "S'il vous plaît entrez votre adresse",
+		"confirm": "Acheter",
+		"confirmText": "En cliquant sur votre commande vous acceptez les conditions d'utilisation"
+	},
+	"adress":
+	{
+		"street": "Rue",
+		"streetnumber": "Numéro de rue",
+		"plz": "Code postal",
+		"town": "Ville"
+	},
+	"buySucess":
+	{
+		"title": "Acheter complète",
+		"text": "Le produit et la facture seront envoyée a cette adresse: "
+	},
+	"search": "chercher"
+}
