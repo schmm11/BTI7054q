@@ -1,6 +1,6 @@
 <?php
 class User {
-	private $id, $username, $name, $first_name, $street, $street_number, $postal_code, $city, $mailaddress, $password;
+	private $id, $username, $name, $first_name, $street, $street_number, $postal_code, $city, $mailadress, $password;
 
 
 	public function getId() {
@@ -28,7 +28,7 @@ class User {
 		return $this->city;
 	}
 	public function getMail(){
-		return $this->mailaddress;
+		return $this->mailadress;
 	}
 	public function getPassword(){
 		return $this->password;
@@ -60,10 +60,10 @@ static public function getUserByName($username) {
 		return $res->fetch_object(get_class());
 }
 
-	static public function createUserByName($username, $password)
+	static public function createUserByName($username, $password, $email)
 	{
 		$password_hash = password_hash($password, PASSWORD_BCRYPT);
 		return DB::doQuery("INSERT INTO users (id, username, name, first_name, street, street_number, postal_code, city, mail, password_hash) VALUES (
-			NULL, '$username', 'Mustermann', 'Max', 'Musterweg', 42, 3000, 'Bern', 'max.mustermann@be.ch', '$password_hash');");
+			NULL, '$username', 'Mustermann', 'Max', 'Musterweg', 42, 3000, 'Bern', '$email', '$password_hash');");
 	}
 }

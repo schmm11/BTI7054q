@@ -12,8 +12,10 @@ if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"])
 {
 	?>
 	<article>
-	<p>
+	
 		<h1>Welcome <?php echo $_SESSION["user"];?></h1>
+	<p>
+	
 	</p>
 	</article>
 	<?php

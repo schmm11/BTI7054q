@@ -5,9 +5,9 @@ $username = (isset($_POST["username"]) ? $_POST["username"] : null);
 $password = (isset($_POST["password"]) ? $_POST["password"] : null);
 $email = (isset($_POST["email"]) ? $_POST["email"] : null);
 
-if($username && $password && email)
+if($username && $password && $email)
 {
-	User::createUserByName($username, $password);
+	User::createUserByName($username, $password, $email);
 	
 	// Send Mail to registered User
 	$empfaenger = $email;
