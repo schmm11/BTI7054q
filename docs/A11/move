@@ -1,0 +1,16 @@
+#!/bin/bash
+
+Time="$(date +"%Y%m%d %H:%M:%S")"
+
+while [[ 1 ]]
+do
+	for File in $(find . -newermt "$Time")
+	do
+		echo "Moving $File"
+		cp "$File" "/cygdrive/c/xampp/htdocs/$File"
+	done
+	Time="$(date +"%Y%m%d %H:%M:%S")"
+
+	sleep 0.2
+done
+

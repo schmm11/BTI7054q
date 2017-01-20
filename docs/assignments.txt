@@ -1,0 +1,31 @@
+Auftrag MVC:
+	Dieser Auftrag wurde nicht vollständig erledigt. Die Grundidee war eine URL wie /a/b/c/d/e zu parsen.
+	Angefangen bei '/' instantiert man einen 'RootController' sowie eine View und ein Model. Daten die weitergegeben werden müssen
+	werden in ein Kontextobjekt gespeichert, diese werden an andere Controller weitergegeben. Danach parst man ein 'a' wobei ein Controller
+	passend zu diesem Token gesucht wird, findet man keinen ruft man die Methode 'a' auf dem derzeitigen Controller auf. Schlägt auch dies fehl,
+	instantiert man einen Controller für einen Fehler, 404 in diesem Fall da der Controller nicht gefunden wurde. Existieren in diesem Beispiel
+	alle Controller, würde der RootController mit dem 'a'-Controller ersetzt werden, dieser durch den 'b'-Controller u.s.w.
+
+	Der FrontController kümmert sich um das parsen der URL und instantieren der jeweiligen Controller, auch den RootController.
+	Die Idee hinter den Views war eine fertige Websites mit verschiedenen Punkten für dynamische Eingaben zu erzeugen. So kann aus dem Kontext-
+	objekt das Feld ausgelesen werden welches in das HTML eingefügt werden soll.
+	Ein Beispiel wie das funktionieren könnte:
+		<!DOCTYPE html>
+		<html>
+			<body>
+				<header>
+					<?php $viewContext->getField('header.content'); ?>
+				</header>
+				<aside>
+					<nav>
+						<?php $viewContext->getField('sidebar.left.nav'); ?>
+					</nav>
+				</aside>
+				<aside>
+					<?php $viewContext->getField('sidebar.right.content'); ?>
+				</aside>
+				<footer>
+					<?php $viewContext->getField('footer.content'); ?>
+				</footer>
+			</body>
+		</html>
